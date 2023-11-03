@@ -474,3 +474,28 @@ ul.social-network li {
 .social-network a {
   background-color: #F9F9F9;
 }
+
+
+/* ---------------------------------------- */
+
+.btn-explore{
+  background-color: transparent;
+  border: 1px solid white !important;
+  width: 200px;
+}
+.btn-explore:hover{
+  background-color: white;
+  color: #14141f;
+}
+
+.read-more-btn{
+  background-color: #f1a501;
+  border: none;
+}
+.read-more-btn:hover{
+  background-color: #b67d03;
+  border: none;
+}
+.contact-text{
+  color: #f1a501;
+}
