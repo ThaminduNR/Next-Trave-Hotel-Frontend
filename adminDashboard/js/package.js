@@ -1,23 +1,25 @@
 //data handling
 
-var baseTravelUrl = "http://localhost:8080/nexttravel/travel/service";
+var baseTravelUrl = "http://localhost:8085/nexttravel/travel/service";
 
 $("#package-save-btn").click(() => {
   let pid = $("#packageId").val();
 
-  if(!pid){
-      saveHotelPackage();
-  }else{
+  if (!pid) {
+    saveHotelPackage();
+  } else {
     alert("Package Already Added");
   }
-
 });
 
 $("#package-update-btn").click(() => {
   updateHotelPackage();
 });
 $("#package-delete-btn").click(() => {
-  console.log("Hrlloo");
+  var isDelete = confirm("Are you sure want to Delete?");
+  if (isDelete) {
+    deleteTravelPackage();
+  }
 });
 
 $("#package-reset-btn").click(() => {
@@ -27,8 +29,6 @@ $("#package-reset-btn").click(() => {
 loadAllPacakageData();
 
 function saveHotelPackage() {
-
-
   var hotel = {
     category: $("#pcategory").val(),
     startDate: $("#sdate").val(),
@@ -169,10 +169,10 @@ function bondClickPackageEvenet() {
     let totalHeadCount = $(this).children().eq(5).text();
     let packageValue = $(this).children().eq(6).text();
     let paidVAlue = $(this).children().eq(7).text();
-    let vehid = $(this).children().eq(7).text();
-    let htlId = $(this).children().eq(7).text();
-    let guideId = $(this).children().eq(7).text();
-    let custId = $(this).children().eq(7).text();
+    let vehid = $(this).children().eq(8).text();
+    let htlId = $(this).children().eq(9).text();
+    let guideId = $(this).children().eq(10).text();
+    let custId = $(this).children().eq(11).text();
 
     $("#gimage").val("");
     $("#gidimage").val("");

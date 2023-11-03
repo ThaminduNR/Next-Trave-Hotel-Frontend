@@ -84,12 +84,14 @@
 
                     <div class="topic-section">
                         <h1 class="heading mt-0 mb-0">Travel Package</h1>
+                       
                     </div>
 
                     <div class="vehicle-detail-panel">
                         <form class="set-one container mb-4">
                             <div class="row">
                                 <div class="form-group col-4 my-5 ">
+                                    <p class="mb-3">Select Package category and search</p>
                                     <label class="mb-2 vehicle-textSize" for="pcategory">Package Catergory</label>
                                     <div class="d-flex">
                                         <select id="pcategory" class="form-control">
@@ -300,6 +302,10 @@
                                             id="totalCost">00</span></label>
                                 </div>
                             </div>
+                            <div class="col-4 mt-3">
+                                <label class="mb-2 vehicle-textSize">Payments</label>
+                                <input type="text" id="paidValue" class="form-control">
+                            </div>
                         </form>
                     </div>
 
@@ -307,10 +313,8 @@
                     <!-- button panel -->
                     <div class="btn-panel mt-4">
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end container">
-                            <button class="btn btn-primary ms-2 px-4" id="vsave-btn" type="button">Save</button>
-                            <button class="btn btn-success px-4" id="vupdate-btn" type="button">Edit</button>
-                            <button class="btn btn-danger px-3 me-md-2" type="button" id="vdelete-btn">Delete</button>
-                            <button class="btn btn-secondary px-3 me-md-2" type="button" id="vreset-btn">Reset</button>
+                            <button class="btn btn-primary py-3 ms-2 px-4" id="bookingsave-btn" type="button">Booking Conform</button>
+                            <button class="btn btn-secondary px-4 me-md-2" type="button" id="booking-reset-btn">Reset</button>
                         </div>
                     </div>
 

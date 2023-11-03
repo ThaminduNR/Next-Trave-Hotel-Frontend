@@ -53,6 +53,8 @@ var hotelUrl = "http://localhost:8080/nexttravel/hotel/service";
 
 var guideUrl = "http://localhost:8081/nexttravel/guide/service";
 
+var travelPackageeUrl = "http://localhost:8085/nexttravel/travel/service";
+
 $("#pcategory").ready(function () {
   $("select.form-control").change(function () {
     selectValue = $(this).children("option:selected").val();
@@ -253,3 +255,62 @@ $(document).ready(function () {
 });
 
 // add booking
+
+$("#bookingsave-btn").click(function () {
+  bookingConform();
+});
+
+$("#booking-reset-btn").click(function () {
+      clearAllBookingForm();
+});
+
+function bookingConform() {
+  let adtCount = $("#adult").val();
+  let chidCount = $("#child").val();
+  let totalheads = parseInt(adtCount) + parseInt(chidCount);
+
+  var travelPackage = {
+    category: $("#pcategory").val(),
+    startDate: $("#sdate").val(),
+    endDate: $("#edate").val(),
+    travelArea: $("#tarea").val(),
+    totalHeadCount: totalheads,
+    packageValue: $("#totalCost").text(),
+    paidValue: $("#paidValue").val(),
+    customerId: userId,
+    vehicleId: $("#vid").val(),
+    hotelId: $("#hId").val(),
+    guideId: $("#gid").val(),
+  };
+
+  $.ajax({
+    url: travelPackageeUrl,
+    processData: false,
+    contentType: "application/json",
+    cache: false,
+    method: "POST",
+    data: JSON.stringify(travelPackage),
+    success: function (res) {
+      if (res.code == 200) {
+        alert(res.message);
+      }
+    },
+    error: function (ob) {
+      alert(ob.responseJSON.message);
+    },
+  });
+}
+
+function clearAllBookingForm() {
+  $("#pcategory").val("");
+  $("#sdate").val("");
+  $("#edate").val("");
+  $("#tarea").val("");
+  $("#adult").val("");
+  $("#child").val("");
+  $("#paidValue").val("");
+  $("#totalCost").text("");
+  $("#vid").val("");
+  $("#hId").val("");
+   $("#gid").val("");
+}
