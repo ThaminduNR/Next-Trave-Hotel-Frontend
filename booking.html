@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Booking</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+
+    <link href="img/favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+
+<body>
+
+    <!-- Spinner-->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner -->
+
+
+    <!-- Navbar & Hero -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="m-0 logo-next"><i class="fa-solid fa-earth-americas mx-3"></i>NEXT travel.</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="" class="nav-item nav-link">About</a>
+                    <a href="" class="nav-item nav-link">Services</a>
+                    <a href="" class="nav-item nav-link">Packages</a>
+                    <a href="" class="nav-item nav-link">Contact</a>
+                </div>
+
+                <li class="nav-item dropdown booking-list me-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" id="logout">Log out</a></li>
+                    </ul>
+                </li>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header-travel">
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Booking Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="content">
+                <div>
+
+                    <div class="topic-section">
+                        <h1 class="heading mt-0 mb-0">Travel Package</h1>
+                    </div>
+
+                    <div class="vehicle-detail-panel">
+                        <form class="set-one container mb-4">
+                            <div class="row">
+                                <div class="form-group col-4 my-5 ">
+                                    <label class="mb-2 vehicle-textSize" for="pcategory">Package Catergory</label>
+                                    <div class="d-flex">
+                                        <select id="pcategory" class="form-control">
+                                            <option>Choose</option>
+                                            <option>Economy</option>
+                                            <option>Mid-Range</option>
+                                            <option>Luxury</option>
+                                            <option>Super Luxury</option>
+                                        </select>
+                                        <div>
+                                            <button class="btn btn-primary px-3 ms-3" id="package-btn" type="button"><i
+                                                    class="fa-solid fa-magnifying-glass"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5>Vehicle Details</h5>
+                                <table class="table table-striped table-secondary container-fluid mt-2">
+                                    <thead>
+                                        <tr class="p-2">
+                                            <th class="px-3">Vehicle_Id</th>
+                                            <th class="px-5">Vehicle_Brand</th>
+                                            <!-- <th class="px-5">Category</th> -->
+                                            <th class="px-5">Fuel_Type</th>
+                                            <th class="px-5">Seats</th>
+                                            <th class="px-5">Day_Value</th>
+                                            <th class="px-5">Front_Image</th>
+                                            <th class="px-5">Back_Image</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="travel-pacakageVehicle-tbl">
+                                        <tr class="text-center">
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                        <form class="set-two container mb-4">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">Vehicle ID</label>
+                                    <input type="text" id="vid" class="form-control">
+                                </div>
+                                <div class="custom-file col-md-4">
+                                    <label class="mb-2 vehicle-textSize"> Car Front Image</label>
+                                    <div class="image-view mt-4 px-4" id="fimage-preview">
+                                        <img src="" id="frontimageplace" class="w-100 py-20">
+                                    </div>
+                                </div>
+                                <div class="custom-file col-md-4">
+                                    <label class="mb-2 vehicle-textSize">Car Back Image</label>
+                                    <div class="image-view mt-4 px-4" id="bimage-preview">
+                                        <img src="" id="backimageplace" class="w-100 py-20">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">Day of Value</label>
+                                    <input type="text" id="dayValue" class="form-control">
+                                </div>
+                            </div>
+                        </form>
+                        <form class="set-three container">
+                            <div class="row">
+                                <h5>Hotel Details</h5>
+                                <table class="table table-striped  container mt-2">
+                                    <thead>
+                                        <tr>
+                                            <th class="px-3">Hotel Id</th>
+                                            <th class="px-5">Hotel Name</th>
+                                            <th class="px-5">Location</th>
+                                            <th class="px-5">Contact</th>
+                                            <th class="px-5">Hotel Fee (1 Night)</th>
+                                            <th class="px-5">Cancellation</th>
+                                            <th class="px-5">Hotel Image</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="travel-pacakage-tbl">
+                                        <tr class="text-center">
+                                            <td>Heloo</td>
+                                            <td>Heloo</td>
+                                            <td>Heloo</td>
+                                            <td>Heloo</td>
+                                            <td>Heloo</td>
+                                            <td>Heloo</td>
+                                            <td>Heloo</td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">Hotel ID</label>
+                                    <input type="text" id="hId" class="form-control">
+                                </div>
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">Hotel Free (1 Night)</label>
+                                    <input type="text" id="hfee" class="form-control">
+                                </div>
+                                <div class="custom-file col-md-4">
+                                    <label class="mb-2 vehicle-textSize">Hotel Image</label>
+                                    <div class="image-view mt-4 px-4">
+                                        <img src="" id="htlimageplace" class="w-100 py-20">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <h5>Guide Details</h5>
+                                <div class="col-4">
+                                    <button type="button" id="needguide" class="btn btn-primary"> Need Guide</button>
+                                </div>
+                                <div class="row">
+                                    <table class="table table-striped  container mt-2">
+                                        <thead>
+                                            <tr class="text-center">
+                                                <th class="px-3">Guide ID</th>
+                                                <th class="px-3">Guide Name</th>
+                                                <th class="px-5">Age</th>
+                                                <th class="px-5">Phone</th>
+                                                <th class="px-5">Experience</th>
+                                                <th class="px-5">Value(1 Day)</th>
+                                                <th class="px-5">Image</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="travel-pacakage-guide-tbl">
+                                            <tr class="text-center">
+                                                <td>Heloo</td>
+                                                <td>Heloo</td>
+                                                <td>Heloo</td>
+                                                <td>Heloo</td>
+                                                <td>Heloo</td>
+                                                <td>Heloo</td>
+                                                <td>Heloo</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">Gide ID</label>
+                                    <input type="text" id="gid" class="form-control">
+                                </div>
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">Day Of value</label>
+                                    <input type="text" id="gdayv" class="form-control">
+                                </div>
+                                <div class="custom-file col-md-4">
+                                    <label class="mb-2 vehicle-textSize">Guide Image</label>
+                                    <div class="image-view mt-4 px-4">
+                                        <img src="" id="gimageplace" class="w-100 py-20">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <h5>Travel Duration</h5>
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">Start Date</label>
+                                    <input type="date" id="sdate" class="form-control">
+                                </div>
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">End Date</label>
+                                    <input type="date" id="edate" class="form-control">
+                                </div>
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">Total Days</label>
+                                    <input type="text" id="tdate" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="form-group col-4">
+                                    <label class="mb-2 vehicle-textSize" for="tarea">Travel Area</label>
+                                    <select id="tarea" class="form-control">
+                                        <option>Choose...</option>
+                                        <option>Kandy and Upcountry</option>
+                                        <option>Eastern Coast</option>
+                                        <option>Capital Colombo</option>
+                                        <option>Western Coast</option>
+                                        <option>North Peninsula</option>
+                                        <option>Down South</option>
+                                        <option>Sigiriya and Dambulla</option>
+                                        <option>Anuradhapura and Polonnaruwa</option>
+                                        <option>Matale</option>
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">No of Adult</label>
+                                    <input type="text" id="adult" class="form-control">
+                                </div>
+                                <div class="col-4">
+                                    <label class="mb-2 vehicle-textSize">No of Child</label>
+                                    <input type="text" id="child" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-lg-5">
+                                <div class="col-4">
+                                    <label class="mb-2 fs-4 fw-bold">Total Value RS : <span
+                                            id="totalCost">00</span></label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <!-- button panel -->
+                    <div class="btn-panel mt-4">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end container">
+                            <button class="btn btn-primary ms-2 px-4" id="vsave-btn" type="button">Save</button>
+                            <button class="btn btn-success px-4" id="vupdate-btn" type="button">Edit</button>
+                            <button class="btn btn-danger px-3 me-md-2" type="button" id="vdelete-btn">Delete</button>
+                            <button class="btn btn-secondary px-3 me-md-2" type="button" id="vreset-btn">Reset</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Booking Start -->
+
+
+
+
+
+    <!-- Footer Start -->
+    <footer class="mainfooter" role="contentinfo">
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+    
+                        <div class="footer-pad">
+                            <h4>Company</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#"></a></li>
+                                <li><a href="#">Payment Center</a></li>
+                                <li><a href="#">Contact Directory</a></li>
+                                <li><a href="#">Forms</a></li>
+                                <li><a href="#">News and Updates</a></li>
+                                <li><a href="#">FAQs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+    
+                        <div class="footer-pad">
+                            <h4>Explore</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Write a review</a></li>
+                                <li><a href="#">Add a Place</a></li>
+                                <li><a href="#">Join</a></li>
+                                <li><a href="#">Travelers' Choice</a></li>
+                                <li><a href="#">GreenLeaders</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+    
+                        <div class="footer-pad">
+                            <h4>Contact us</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#">038-15 16 256</a></li>
+                                <li><a href="#">204 Galle Rd, Kalutara 12000</a></li>
+                                <li><a href="#">nexttravel@email.com</a></li>
+                                <li><a href="#">Case Studies</a></li>
+                                <li>
+                                    <a href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Follow Us</h4>
+                        <ul class="social-network social-circle">
+                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa-brands fa-whatsapp"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 copy">
+                        <p class="text-center">&copy; Copyright 2023 - NEXT Travel (Pvt) LTD. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+
+
+    <script src="js/booking.js"></script>
+    <script src="js/main.js"></script>
+
+
+    <script>
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

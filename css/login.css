@@ -1,0 +1,63 @@
+.login-form {
+  width: 500px;
+  height: 550px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  background: linear-gradient(rgba(15, 23, 43, 0.8), rgba(15, 23, 43, 0.7)),
+    url(../img/booking.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-header-login {
+  background: linear-gradient(rgba(20, 20, 31, 0.384), rgba(38, 38, 48, 0.575)),
+    url(../img/login.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+.login-btn {
+  background-color: #f7c761;
+  border: none;
+  border: 2px solid transparent;
+}
+.login-btn:hover {
+  background-color: #ffff;
+  color: #f1a501;
+  border: 2px solid #f1a501;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(230, 189, 8, 0.829);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+    0 0 8px rgba(239, 207, 104, 0.6);
+  outline: 0 none;
+}
+
+form,
+input,
+label,
+p {
+  color: white !important;
+}
+
+.login-text {
+  color: white;
+  font-family: "Poppins", sans-serif;
+}

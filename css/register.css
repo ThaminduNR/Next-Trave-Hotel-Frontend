@@ -1,0 +1,65 @@
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(230, 189, 8, 0.829);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+    0 0 8px rgba(239, 207, 104, 0.6);
+  outline: 0 none;
+}
+
+.image-view {
+  width: 200px;
+  height: 100px;
+  /* border: 1px solid #bdc3c7; */
+  border-radius: 10px;
+}
+
+/* register form */
+.register-img > img {
+  width: 600px;
+  margin-left: 20px;
+}
+
+.register-detail-panel {
+  width: 650px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 30px;
+  border-radius: 10px;
+  /* background: linear-gradient(rgba(15, 23, 43, 0.8), rgba(15, 23, 43, 0.7)),
+    url(../img/undraw_sign_up_n6im.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.hero-header-register {
+  background: linear-gradient(rgba(20, 20, 31, 0.384), rgba(38, 38, 48, 0.575)),
+    url(../img/login.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 12vh;
+}
+.userId-section {
+  display: none;
+}
+/* form,
+input,
+label,
+p {
+  color: white !important;
+} */
+

@@ -1,0 +1,476 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,600;0,700;1,400&family=Dosis:wght@300;400;500;600&family=Noto+Sans:wght@400;500;700&family=Nunito+Sans&family=PT+Serif:wght@400;700&family=Poppins:wght@200;400;600;700&family=Roboto:wght@300;400;500&family=Ubuntu:wght@300;500&display=swap");
+
+:root {
+  --primary: #f1a501;
+  --secondary: #f1a501;
+  --light: #f5f5f5;
+  --dark: #14141f;
+}
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.fw-medium {
+  font-weight: 600 !important;
+}
+
+.fw-semi-bold {
+  font-weight: 700 !important;
+}
+
+.hero-main-text {
+  font-family: "Poppins", sans-serif;
+
+  /*   
+  font-family: "Arimo", sans-serif;
+  font-family: "Dosis", sans-serif;
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "PT Serif", serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu", sans-serif; */
+}
+
+.section-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 45px;
+  bottom: 45px;
+  z-index: 99;
+  background-color: #f1a501;
+  border: 1px solid white;
+}
+
+.back-to-top:hover {
+  background-color: #d4a236;
+  border: 1px solid white;
+}
+
+.btot-btn {
+  position: fixed;
+  display: none;
+  right: 45px;
+  bottom: 45px;
+  z-index: 99;
+  background-color: #f1a501;
+  border: 1px solid white;
+  color: #f5f5f5;
+}
+
+.btot-btn:hover {
+  background-color: #f7c761;
+  border: 1px solid white;
+  color: white;
+}
+
+/*** Spinner ***/
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1;
+}
+
+/*** Button ***/
+.btn {
+  font-family: "poppins", sans-serif;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+  color: #ffffff;
+}
+
+.btn-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-lg-square {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  border-radius: 0px;
+}
+
+/*** Navbar ***/
+.navbar-light .navbar-nav .nav-link {
+  font-family: "poppins", sans-serif;
+  position: relative;
+  margin-right: 25px;
+  padding: 35px 0;
+  color: #ffffff !important;
+  font-size: 18px;
+  font-weight: 600;
+  outline: none;
+  transition: 0.5s;
+}
+
+.sticky-top.navbar-light .navbar-nav .nav-link {
+  padding: 20px 0;
+  color: var(--dark) !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--primary) !important;
+}
+
+.navbar-light .navbar-brand img {
+  max-height: 60px;
+  transition: 0.5s;
+}
+
+.sticky-top.navbar-light .navbar-brand img {
+  max-height: 45px;
+}
+
+@media (max-width: 991.98px) {
+  .sticky-top.navbar-light {
+    position: relative;
+    background: #ffffff;
+  }
+
+  .navbar-light .navbar-collapse {
+    margin-top: 15px;
+    border-top: 1px solid #dddddd;
+  }
+
+  .navbar-light .navbar-nav .nav-link,
+  .sticky-top.navbar-light .navbar-nav .nav-link {
+    padding: 10px 0;
+    margin-left: 0;
+    color: var(--dark) !important;
+  }
+
+  .navbar-light .navbar-brand img {
+    max-height: 45px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-light {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(256, 256, 256, 0.1);
+    z-index: 999;
+  }
+
+  .sticky-top.navbar-light {
+    position: fixed;
+    background: #ffffff;
+  }
+}
+
+/*** Hero Header ***/
+.hero-header {
+  background: linear-gradient(rgba(20, 20, 31, 0.384), rgba(38, 38, 48, 0.575)),
+    url(../img/9arch.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/*** Section Title ***/
+.section-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #f1a501 !important;
+}
+
+.section-title.text-start::before {
+  width: calc(100% + 40px);
+  left: 0;
+}
+
+.section-title.text-start::after {
+  width: calc(100% + 60px);
+  left: 0;
+}
+
+/*** Service ***/
+.service-item {
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+  transition: 0.5s;
+}
+
+.service-item:hover {
+  background: var(--primary);
+}
+
+.service-item * {
+  transition: 0.5s;
+}
+
+.service-item:hover * {
+  color: var(--light) !important;
+}
+
+/*** Destination ***/
+.destination img {
+  transition: 0.5s;
+}
+
+.destination a:hover img {
+  transform: scale(1.1);
+}
+
+/*** Package ***/
+.package-item {
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+}
+
+.package-item img {
+  transition: 0.5s;
+}
+
+.package-item:hover img {
+  transform: scale(1.1);
+}
+
+.card-service {
+  height: 430px;
+}
+
+.service-text {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-margin {
+  margin-left: 80px;
+}
+
+
+
+
+
+
+/*** Team ***/
+.team-item {
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+}
+
+.team-item img {
+  transition: 0.5s;
+}
+
+.team-item:hover img {
+  transform: scale(1.1);
+}
+
+.team-item .btn {
+  background: #ffffff;
+  color: var(--primary);
+  border-radius: 20px;
+  border-bottom: 1px solid var(--primary);
+}
+
+.team-item .btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.register-btn {
+  background-color: #f1a501;
+  border: 1px solid #f1a501;
+}
+
+.register-btn:hover {
+  background-color: #f9f9f9;
+  color: #f1a501;
+  border: 1px solid #f1a501;
+}
+
+.logo-next {
+  color: #f1a501;
+}
+
+.serv-icon {
+  color: #f1a501;
+}
+
+.hero-header-travel {
+  background: linear-gradient(rgba(20, 20, 31, 0.384), rgba(38, 38, 48, 0.575)),
+    url(../img/login.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 12vh;
+}
+
+.login-btn {
+  background-color: #f7c761;
+  border: none;
+  border: 2px solid transparent;
+}
+.login-btn:hover {
+  background-color: #ffff;
+  color: #f1a501;
+  border: 2px solid #f1a501;
+}
+
+
+.service-cart-text{
+  font-size: 15px;
+}
+
+
+/* ------------------------------------------------------------------ */
+
+/*FOOTER*/
+
+a{
+  text-decoration: none;
+}
+
+footer {
+  background: #16222A;
+  background: -webkit-linear-gradient(180deg,  #f1a501, #16222A);
+  background: linear-gradient(40deg,  #16222A, #16222A);
+  color: white;
+  margin-top:100px;
+}
+
+footer a {
+  color: #fff;
+  font-size: 14px;
+  transition-duration: 0.2s;
+}
+
+footer a:hover {
+  color: #FA944B;
+  text-decoration: none;
+}
+
+.copy {
+  font-size: 12px;
+  padding: 10px;
+  border-top: 1px solid #FFFFFF;
+}
+
+.footer-middle {
+  padding-top: 2em;
+  color: white;
+}
+
+
+/*SOCİAL İCONS*/
+
+/* footer social icons */
+
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+
+
+/* footer social icons */
+
+.social-network a.icoFacebook:hover {
+  background-color: #3B5998;
+}
+
+.social-network a.icoLinkedin:hover {
+  background-color: #007bb7;
+}
+
+.social-network a.icoFacebook:hover i,
+.social-network a.icoLinkedin:hover i {
+  color: #fff;
+}
+
+.social-network a.socialIcon:hover,
+.socialHoverClass {
+  color: #44BCDD;
+}
+
+.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.social-circle li i {
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+
+.social-circle li a:hover i,
+.triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.social-circle i {
+  color: #595959;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.social-network a {
+  background-color: #F9F9F9;
+}

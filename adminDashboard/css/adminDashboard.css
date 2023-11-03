@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
+
+  --light: #f9f9f9;
+  --blue: #f1a501;
+  --light-blue: #cfe8ff;
+  --grey: #fceed7;
+  --dark-grey: #7a7a7a;
+  --dark: #342e37;
+  --red: #db504a;
+  --yellow: #ffce26;
+  --light-yellow: #fff2c6;
+  --orange: #fd7238;
+  --light-orange: #ffe0d3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--poppins);
+}
+
+a {
+  text-decoration: none !important;
+}
+
+li {
+  list-style: none;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #f5f5dc;
+  z-index: 2000;
+  transition: 0.3s ease;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+#sidebar.hide {
+  width: 60px;
+}
+
+#sidebar .brand {
+  font-size: 20px;
+  font-weight: 700;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  color: #004225;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #f5f5dc;
+  z-index: 500;
+}
+.logo {
+  margin-left: 15px;
+}
+#sidebar .brand .bx {
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+}
+#sidebar .side-menu {
+  width: 100%;
+  margin-top: 48px;
+}
+#sidebar .side-menu li {
+  height: 48px;
+  background: transparent;
+  margin-left: 6px;
+  border-radius: 48px 0 0 48px;
+  padding: 4px;
+}
+#sidebar .side-menu li.active {
+  background: white;
+  position: relative;
+}
+#sidebar .side-menu li.active::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: -40px;
+  right: 0;
+  z-index: -1;
+}
+#sidebar .side-menu li.active::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  bottom: -40px;
+  right: 0;
+  z-index: -1;
+}
+#sidebar .side-menu li a {
+  width: 100%;
+  height: 100%;
+  background: #f5f5dc;
+  display: flex;
+  align-items: center;
+  border-radius: 48px;
+  font-size: 16px;
+  color: var(--dark);
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+#sidebar .side-menu li a:hover {
+  background-color: white;
+}
+
+#sidebar .side-menu.top li.active a {
+  color: var(--blue);
+}
+#sidebar.hide .side-menu li a {
+  width: calc(48px - (4px * 2));
+  transition: width 0.3s ease;
+}
+#sidebar .side-menu li a.logout {
+  color: var(--red);
+}
+#sidebar .side-menu.top li a:hover {
+  color: var(--blue);
+}
+#sidebar .side-menu li a .bx {
+  min-width: calc(60px - ((4px + 6px) * 2));
+  display: flex;
+  justify-content: center;
+}
+
+.top {
+  padding-left: 10px;
+}
+.bottom {
+  padding-left: 10px;
+}
+.content {
+  width: calc(100% - 250px);
+  height: auto;
+  background-color: white;
+  margin-left: 250px;
+  margin-top: 50px;
+}
+
+.nav-bar {
+  width: calc(100% - 250px);
+  height: 55px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 250px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.pro-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pro-section p {
+  margin-bottom: 0;
+}
+.pro-img {
+  width: 40px;
+  height: 40px;
+  background-color: #db504a;
+  border-radius: 100%;
+  margin-left: 20px;
+}
+
+.dashboard {
+  padding: 20px;
+}
+.dashboard h1 {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.value-card {
+  width: 100%;
+  height: 170px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card-type {
+  width: 300px;
+  height: 150px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px 10px 20px;
+}
+.card-type i {
+  font-size: 3rem;
+  width: 100px;
+  height: 100px;
+  background-color: #f8ebc1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+.card-text h3 {
+  margin: 0;
+}
+.card-text p {
+  margin: 0;
+}
+
+.new-colors1 {
+  background-color: #ffe0d3 !important;
+}
+.new-colors2 {
+  background-color: #cfe8ff !important;
+}
+#dashboard {
+  height: 500px;
+}
+
+/* vehicle section */
+
+#vehicle {
+  display: none;
+}
+.heading {
+  font-family: var(--poppins);
+}
+
+.form-group {
+  width: 400px;
+}
+.vehicle-form {
+  display: flex;
+  flex-direction: column;
+}
+.drive-detail {
+  margin-top: 40px;
+}
+
+/* tables */
+
+.table-wrapper {
+  max-width: 1200px;
+  overflow: auto;
+}
+.btn-panel {
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+}
+.search-panel {
+  margin-right: 20px;
+}
+
+.vehicle-textSize {
+  font-size: 13px;
+}
+::-webkit-input-placeholder {
+  font-size: 13px;
+}
+.vehicle-detail-panel {
+  /* border: 1px solid black; */
+  padding: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.image-view {
+  width: 200px;
+  height: 100px;
+  /* border: 1px solid #bdc3c7; */
+  border-radius: 10px;
+}
+
+/* user section */
+#user {
+  display: none;
+}
+#guide {
+  display: none;
+}
+#hotel {
+  display: none;
+}
+.gid-section {
+  display: none;
+}
+
+.htl-is-part {
+  display: none;
+}
+.userId-section {
+  display: none;
+}
+.vid-section {
+  display: none;
+}
+
+#travel {
+  display: none;
+}
+.cur-btn {
+  cursor: pointer;
+}

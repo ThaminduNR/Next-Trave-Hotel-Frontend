@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Admin Dashboard Next Travel</title>
+    <link rel="stylesheet" href="css/adminDashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <section id="sidebar">
+        <a href="#" class="brand">
+            <!-- <i class='bx bxs-smile'></i> -->
+            <span class="text logo">Next Travel (Pvt) Ltd</span>
+        </a>
+        <ul class="side-menu top">
+            <li class="active">
+                <a class="dash-btn">
+                    <i class='bx bxs-dashboard'></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a class="vehi-btn cur-btn">
+                    <i class='bx bxs-shopping-bag-alt'></i>
+                    <span class="text">Vehicle</span>
+                </a>
+            </li>
+            <li>
+                <a class="user-btn cur-btn">
+                    <i class='bx bxs-doughnut-chart'></i>
+                    <span class="text">Users</span>
+                </a>
+            </li>
+            <li>
+                <a class="hotel-btn cur-btn">
+                    <i class='bx bxs-message-dots'></i>
+                    <span class="text">Hotels</span>
+                </a>
+            </li>
+            <li>
+                <a class="guide-btn cur-btn">
+                    <i class='bx bxs-group'></i>
+                    <span class="text">Guides</span>
+                </a>
+            </li>
+            <li>
+                <a class="travel-btn cur-btn">
+                    <i class='bx bxs-group'></i>
+                    <span class="text">Travels</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-menu bottom">
+            <li>
+                <a href="#">
+                    <i class='bx bxs-cog'></i>
+                    <span class="text">Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="logout">
+                    <i class='bx bxs-log-out-circle'></i>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- content -->
+    <nav class="nav-bar">
+        <form class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+        </form>
+        <div class="pro-section">
+            <p class="mx-3 dsah_name">Thamindu Ranawaka</p>
+            <i class="fa-solid fa-bell fs-3"></i>
+            <div class="pro-img"></div>
+
+        </div>
+    </nav>
+    <section>
+        <div class="content" id="dashboard">
+            <div class="dashboard">
+                <h1>Dashboard</h1>
+                <div class="value-card">
+                    <div class="card-type">
+                        <i class="fa-solid fa-users"></i>
+                        <div class="card-text">
+                            <h3>150</h3>
+                            <p>New Users</p>
+                        </div>
+                    </div>
+                    <div class="card-type">
+                        <i class="fa-solid fa-car new-colors1"></i>
+                        <div class="card-text">
+                            <h3>150</h3>
+                            <p>Vehicles</p>
+                        </div>
+                    </div>
+                    <div class="card-type">
+                        <i class="fa-solid fa-hotel new-colors2"></i>
+                        <div class="card-text">
+                            <h3>150</h3>
+                            <p>Hotels</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- vehicle part -->
+        <div class="content" id="vehicle">
+            <div class="dashboard">
+
+                <div class="search-panel">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end container btn-panel mb-0">
+                        <div class=" search-text">
+                            <input type="text" class="form-control" id="search-text" placeholder="Search">
+                        </div>
+                        <button class="btn btn-primary px-4" type="button"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <div class="topic-section">
+                    <h1 class="heading mt-0 mb-0">Vehicle</h1>
+                    <p class="mb-5 mx-1">Vehicke Deatils</p>
+                </div>
+
+                <div class="vehicle-detail-panel">
+                    <form class="set-id container mb-4 vid-section">
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="mb-2 vehicle-textSize">Vehicle ID</label>
+                                <input type="text" class="form-control" readonly id="vId" placeholder="Vehicle ID">
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-one container mb-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Vehicle Brand</label>
+                                <input type="text" class="form-control" id="vbrand">
+                            </div>
+                            <div class="form-group col-4">
+                                <label class="mb-2 vehicle-textSize" for="vcategory">Category</label>
+                                <select id="vcategory" class="form-control">
+                                    <option selected>Choose</option>
+                                    <option>Economy</option>
+                                    <option>Mid-Range</option>
+                                    <option>Luxury</option>
+                                    <option>Super Luxury</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-4">
+                                <label class="mb-2 vehicle-textSize" for="ftype">Fuel type</label>
+                                <select id="ftype" class="form-control">
+                                    <option selected>Choose</option>
+                                    <option>Petrol</option>
+                                    <option>Disel</option>
+                                    <option>Electric</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-two container mb-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Day of Value</label>
+                                <input type="text" id="fusage" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Seats Capacity</label>
+                                <input type="text" id="seat" class="form-control">
+                            </div>
+                            <div class="form-group col-4">
+                                <label class="mb-2 vehicle-textSize" for="fusage">Transmission Type</label>
+                                <select id="ttype" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>Auto</option>
+                                    <option>Manual</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-three container">
+                        <div class="row">
+                            <div class="custom-file col-md-4">
+                                <label class="mb-2 vehicle-textSize">Front Image</label>
+                                <input type="file" class="custom-file-input" id="fimage">
+                                <div class="image-view mt-4 px-4" id="fimage-preview">
+                                    <img src="" id="frontimageplace" class="w-100 py-20">
+                                </div>
+                            </div>
+                            <div class="custom-file col-md-4">
+                                <label class="mb-2 vehicle-textSize">Back Image</label>
+                                <input type="file" class="custom-file-input" id="bimage">
+                                <div class="image-view mt-4 px-4" id="bimage-preview">
+                                    <img src="" id="backimageplace" class="w-100 py-20">
+                                </div>
+                            </div>
+                            <div class="custom-file col-md-4">
+                                <label class="mb-2 vehicle-textSize">Side Image</label>
+                                <input type="file" class="custom-file-input" id="simage">
+                                <div class="image-view mt-4 px-4" id="simage-preview">
+                                    <img src="" id="sideimageplace" class="w-100 py-20">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Driver Details -->
+                <div class="drive-detail">
+                    <h5>Driver Details</h5>
+                    <form class="set-two container">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Driver Name</label>
+                                <input type="text" id="dname" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Contact Number</label>
+                                <input type="text" id="dnumber" class="form-control">
+                            </div>
+                            <div class="custom-file col-md-4">
+                                <label class="mb-2 vehicle-textSize">License Image</label>
+                                <input type="file" class="custom-file-input" id="dlimage">
+                                <div class="image-view mt-4 px-4" id="limage-preview">
+                                    <img src="" id="dlimageplace" class="w-100 py-20">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- button panel -->
+                <div class="btn-panel">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end container">
+                        <button class="btn btn-primary ms-2 px-4" id="vsave-btn" type="button">Save</button>
+                        <button class="btn btn-success px-4" id="vupdate-btn" type="button">Edit</button>
+                        <button class="btn btn-danger px-3 me-md-2" type="button" id="vdelete-btn">Delete</button>
+                        <button class="btn btn-secondary px-3 me-md-2" type="button" id="vreset-btn">Reset</button>
+                    </div>
+                </div>
+
+
+                <div class="container tbl-container">
+                    <div class="table-wrapper">
+                        <table class="table table-striped table-secondary">
+                            <thead>
+                                <tr>
+                                    <th class="px-3">Vehicle Id</th>
+                                    <th class="px-5">Vehicle Brand</th>
+                                    <th class="px-5">Vehicle Category</th>
+                                    <th class="px-5">Fuel Type</th>
+                                    <th class="px-5">Fuel Usage</th>
+                                    <th class="px-5">Seats Capacity</th>
+                                    <th class="px-5">Transmission Type</th>
+                                    <th class="px-5">Front Image</th>
+                                    <th class="px-5">Back Image</th>
+                                    <th class="px-5">Side Image</th>
+                                    <th class="px-5">Driver Name</th>
+                                    <th class="px-5">Contact Number</th>
+                                    <th class="px-5">License Image</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody id="allVehicle-tbl">
+                                <tr>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- user part -->
+        <div class="content" id="user">
+            <div class="dashboard">
+
+                <div class="search-panel">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end container btn-panel mb-0">
+                        <div class=" search-text">
+                            <input type="text" class="form-control" id="user-search-text" placeholder="Search">
+                        </div>
+                        <button class="btn btn-primary px-4" type="button"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <div class="topic-section">
+                    <h1 class="heading mt-0 mb-0">Users</h1>
+                    <p class="mb-5 mx-1">User Deatils</p>
+                </div>
+
+                <div class="vehicle-detail-panel">
+                    <form class="set-id container mb-4">
+                        <div class="row">
+                            <div class="col-4 userId-section">
+                                <label class="mb-2 vehicle-textSize">User ID</label>
+                                <input type="text" class="form-control" readonly id="uId" placeholder="Can't">
+                            </div>
+                            <div class="col-6">
+                                <label class="mb-2 vehicle-textSize">Full Name</label>
+                                <input type="text" class="form-control" id="uname">
+                            </div>
+                            <div class="col-6">
+                                <label class="mb-2 vehicle-textSize">User Age</label>
+                                <input type="text" class="form-control" id="uage">
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-one container mb-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Email</label>
+                                <input type="email" class="form-control" id="uemail">
+                            </div>
+                            <div class="form-group col-4">
+                                <label class="mb-2 vehicle-textSize">username</label>
+                                <input type="text" id="username" class="form-control">
+                            </div>
+                            <div class="form-group col-4">
+                                <label class="mb-2 vehicle-textSize">Password</label>
+                                <input type="password" id="upws" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-two container mb-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Phone</label>
+                                <input type="text" id="uphone" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Address</label>
+                                <input type="text" id="uaddress" class="form-control">
+                            </div>
+                            <div class="form-group col-4">
+                                <label class="mb-2 vehicle-textSize" for="ugender">Gender</label>
+                                <select id="ugender" class="form-control">
+                                    <option>Choose</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-three container">
+                        <div class="row">
+                            <div class="custom-file col-md-4">
+                                <label class="mb-2 vehicle-textSize">NIC no</label>
+                                <input type="text" id="unic" class="form-control">
+                            </div>
+
+                            <div class="custom-file col-md-4">
+                                <label class="mb-2 vehicle-textSize">NIC Image</label>
+                                <input type="file" class="custom-file-input" id="unicimage">
+                                <div class="image-view mt-4 px-4" id="nic-preview">
+                                    <img src="" id="uidimageplace" class="w-100 py-20">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <!-- button panel -->
+                <div class="btn-panel">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end container">
+                        <button class="btn btn-primary ms-2 px-4" id="user-save-btn" type="button">Save</button>
+                        <button class="btn btn-success px-2" id="user-update-btn" type="button">Update</button>
+                        <button class="btn btn-danger px-3 me-md-2" id="user-delete-btn" type="button">Delete</button>
+                        <button class="btn btn-secondary px-3 me-md-2" id="user-reset-btn" type="button">Reset</button>
+                    </div>
+                </div>
+
+
+                <div class="container tbl-container">
+                    <div class="table-wrapper">
+                        <table class="table table-striped table-secondary table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="px-3">User Id</th>
+                                    <th class="px-5">Name</th>
+                                    <th class="px-5">User Age</th>
+                                    <th class="px-5">Email</th>
+                                    <th class="px-5">Username</th>
+                                    <th class="px-5">Password</th>
+                                    <th class="px-5">Phone</th>
+                                    <th class="px-5">Address</th>
+                                    <th class="px-5">Gender</th>
+                                    <th class="px-5">NIC</th>
+                                    <th class="px-5">NIC Image</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="user-tbl">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- guide part -->
+
+
+        <div class="content" id="guide">
+            <div class="dashboard">
+
+                <div class="search-panel">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end container btn-panel mb-0">
+                        <div class=" search-text">
+                            <input type="text" class="form-control" id="gsearch-text" placeholder="Search">
+                        </div>
+                        <button class="btn btn-primary px-4" type="button"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <div class="topic-section">
+                    <h1 class="heading mt-0 mb-0">Guides</h1>
+                    <p class="mb-5 mx-1">Guides Deatils</p>
+                </div>
+
+                <div class="vehicle-detail-panel">
+
+                    <form class="set-id container mb-4">
+                        <div class="row">
+                            <div class="col-12 gid-section">
+                                <label class="mb-2 vehicle-textSize">Guide ID</label>
+                                <input type="text" class="form-control" readonly id="gId" placeholder="You cannot Edit">
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-one container mb-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Name</label>
+                                <input type="text" class="form-control" id="gname">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Addess</label>
+                                <input type="text" class="form-control" id="gaddress">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Age</label>
+                                <input type="text" class="form-control" id="gage">
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-two container mb-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Phone</label>
+                                <input type="text" id="gphone" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Experience</label>
+                                <input type="text" id="gexp" class="form-control">
+                            </div>
+                            <div class="form-group col-4">
+                                <label class="mb-2 vehicle-textSize" for="fusage">Gender</label>
+                                <select id="ggender" class="form-control">
+                                    <option>Choose...</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-three container">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Value</label>
+                                <input type="text" class="form-control" id="gvalue">
+                            </div>
+                            <div class="custom-file col-md-4">
+                                <label class="mb-2 vehicle-textSize">Guide Image</label>
+                                <input type="file" class="custom-file-input" id="gimage">
+                                <div class="image-view mt-4 px-4">
+                                    <img src="" id="gproimageplace" class="w-100 py-20">
+                                </div>
+                            </div>
+                            <div class="custom-file col-md-4">
+                                <label class="mb-2 vehicle-textSize">Guide ID Image</label>
+                                <input type="file" class="custom-file-input" id="gidimage">
+                                <div class="image-view mt-4 px-4">
+                                    <img src="" id="gidimageplace" class="w-100 py-20">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- button panel -->
+                <div class=" btn-panel">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end container">
+
+                        <button class="btn btn-primary ms-2 px-4" type="button" id="gud-save-btn">Save</button>
+                        <button class="btn btn-success px-4" id="gud-edit-btn" type="button">Edit</button>
+                        <button class="btn btn-danger px-3 me-md-2" id="gud-delete-btn" type="button">Delete</button>
+                        <button class="btn btn-secondary  px-3" type="button" id="gud-claer-btn">clear</button>
+                    </div>
+                </div>
+
+
+                <div class="container tbl-container">
+                    <div class="table-wrapper">
+                        <table class="table table-striped table-secondary table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="px-3">Guide Id</th>
+                                    <th>Name</th>
+                                    <th>Address</th>
+                                    <th>Age</th>
+                                    <th>Phone</th>
+                                    <th>Experience</th>
+                                    <th>Gender</th>
+                                    <th>Value</th>
+                                    <th>Guide Image</th>
+                                    <th>ID Image</th>
+                                </tr>
+                            </thead>
+                            <tbody id="all-guide-tbl">
+                                <tr>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hotel paart -->
+
+        <div class="content" id="hotel">
+            <div class="dashboard">
+
+                <div class="search-panel">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end container btn-panel mb-0">
+                        <div class=" search-text">
+                            <input type="text" class="form-control" id="hsearch-text" placeholder="Search">
+                        </div>
+                        <button class="btn btn-primary px-4" type="button"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <div class="topic-section">
+                    <h1 class="heading mt-0 mb-0">Hotels</h1>
+                    <p class="mb-5 mx-1">Hotel Deatils</p>
+                </div>
+
+                <div class="vehicle-detail-panel">
+                    <form class="set-id container mb-4">
+                        <div class="row">
+                            <div class="col-6 htl-is-part">
+                                <label class="mb-2 vehicle-textSize">Hotel ID</label>
+                                <input type="text" class="form-control" readonly id="hId" placeholder="You cannot Edit">
+                            </div>
+                            <div class="col-12">
+                                <label class="mb-2 vehicle-textSize">Hotel Name</label>
+                                <input type="text" class="form-control" id="hname">
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-one container mb-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Location</label>
+                                <input type="text" class="form-control" id="hlocation">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Location Map</label>
+                                <input type="text" class="form-control" id="hlocationmap">
+                            </div>
+                            <div class="col-4">
+                                <label for="hmail" class="mb-2 vehicle-textSize">Email</label>
+                                <input type="email" class="form-control" id="hmail">
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-two container mb-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Contact</label>
+                                <input type="text" id="hcontact" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Hotel Fee</label>
+                                <input type="text" id="hfee" class="form-control">
+                            </div>
+                            <div class="form-group col-4">
+                                <label class="mb-2 vehicle-textSize" for="hcategory">Category</label>
+                                <select id="hcategory" class="form-control">
+                                    <option>Choose...</option>
+                                    <option>Economy</option>
+                                    <option>Mid-Range</option>
+                                    <option>Luxury</option>
+                                    <option>Super Luxury</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-three container">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Cancellation fee</label>
+                                <input type="text" class="form-control" id="hcancle">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Remarks</label>
+                                <input type="text" class="form-control" id="hremark">
+                            </div>
+                            <div class="custom-file col-md-4">
+                                <label class="mb-2 vehicle-textSize">Hotel Image</label>
+                                <input type="file" class="custom-file-input" id="himage">
+                                <div class="image-view mt-4 px-4">
+                                    <img src="" id="hotelimageplace" class="w-100 py-20">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- button panel -->
+                <div class="btn-panel">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end container">
+                        <button class="btn btn-primary ms-2 px-4" type="button" id="hotel-save-btn">Save</button>
+                        <button class="btn btn-success px-3" type="button" id="hotel-update-btn">Update</button>
+                        <button class="btn btn-danger px-3 me-md-2" type="button" id="hotel-delete-btn">Delete</button>
+                        <button class="btn btn-secondary px-3 me-md-2" type="button" id="hotel-reset-btn">Reset</button>
+                    </div>
+                </div>
+
+
+                <div class="container tbl-container">
+                    <div class="table-wrapper">
+                        <table class="table table-striped table-secondary table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="px-3 text-center">Hotel_Id</th>
+                                    <th class="px-4 text-center">Hotel_Name</th>
+                                    <th class="px-4 text-center">Location</th>
+                                    <th class="text-center">Location_Map</th>
+                                    <th class="px-4">Email</th>
+                                    <th class="text-center">Contact</th>
+                                    <th class="text-center">Hotel_Fee</th>
+                                    <th class="px-5 text-center">Category</th>
+                                    <th class="text-center">Cancellation_fee</th>
+                                    <th class="text-center">Hotel_Image</th>
+                                    <th class="text-center">Remark</th>
+                                </tr>
+                            </thead>
+                            <tbody id="hotel-tbl-dat">
+                                <tr>
+
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- travel package part -->
+        <div class="content" id="travel">
+            <div class="dashboard">
+
+                <div class="search-panel">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end container btn-panel mb-0">
+                        <div class=" search-text">
+                            <input type="text" class="form-control" id="psearch-text" placeholder="Search">
+                        </div>
+                        <button class="btn btn-primary px-4" type="button"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                <div class="topic-section">
+                    <h1 class="heading mt-0 mb-0">Travel Package</h1>
+                    <p class="mb-5 mx-1">Package Deatils</p>
+                </div>
+
+                <div class="vehicle-detail-panel">
+                    <form class="set-id container mb-4">
+                        <div class="row">
+                            <div class="col-6 travel-id-part">
+                                <label class="mb-2 vehicle-textSize">Package ID</label>
+                                <input type="text" class="form-control" readonly id="packageId" placeholder="You cannot Edit">
+                            </div>
+                            <div class="form-group col-6">
+                                <label class="mb-2 vehicle-textSize" for="pcategory">Category</label>
+                                <select id="pcategory" class="form-control">
+                                    <option></option>
+                                    <option>Economy</option>
+                                    <option>Mid-Range</option>
+                                    <option>Luxury</option>
+                                    <option>Super Luxury</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-one container mb-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Start Date</label>
+                                <input type="date" class="form-control" id="sdate">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">End Date</label>
+                                <input type="date" class="form-control" id="edate">
+                            </div>
+                            <div class="col-4">
+                                <label for="hmail" class="mb-2 vehicle-textSize">Travel Area</label>
+                                <input type="email" class="form-control" id="tarea">
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-two container mb-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Total Head Count</label>
+                                <input type="text" id="thcount" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Pacakage Value</label>
+                                <input type="text" id="packagevalue" class="form-control">
+                            </div>
+                            <div class="col-4">
+                                <label class="mb-2 vehicle-textSize">Paid Value</label>
+                                <input type="text" id="paidvalue" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                    <form class="set-three container">
+                        <div class="row">
+                            <div class="col-3">
+                                <label class="mb-2 vehicle-textSize">Vehicle ID</label>
+                                <input type="text" class="form-control" id="vid">
+                            </div>
+                            <div class="col-3">
+                                <label class="mb-2 vehicle-textSize">Hotel ID</label>
+                                <input type="text" class="form-control" id="hid">
+                            </div>
+                            <div class="col-3">
+                                <label class="mb-2 vehicle-textSize">Guide ID</label>
+                                <input type="text" class="form-control" id="gid">
+                            </div>
+                            <div class="col-3">
+                                <label class="mb-2 vehicle-textSize">Cusyomer ID</label>
+                                <input type="text" class="form-control" id="cid">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- button panel -->
+                <div class="btn-panel">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end container">
+                        <button class="btn btn-primary ms-2 px-4" type="button" id="package-save-btn">Save</button>
+                        <button class="btn btn-success px-3" type="button" id="package-update-btn">Update</button>
+                        <button class="btn btn-danger px-3 me-md-2" type="button" id="package-delete-btn">Delete</button>
+                        <button class="btn btn-secondary px-3 me-md-2" type="button" id="package-reset-btn">Reset</button>
+                    </div>
+                </div>
+
+
+                <div class="container tbl-container">
+                    <div class="table-wrapper">
+                        <table class="table table-striped table-secondary table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="px-3 text-center">Package_ID</th>
+                                    <th class="px-4 text-center">Category</th>
+                                    <th class="px-4 text-center">Start_Date</th>
+                                    <th class="text-center">End_Date</th>
+                                    <th class="px-4">Travel_Area</th>
+                                    <th class="text-center">Total_Head_Count</th>
+                                    <th class="text-center">Pacakage_Value</th>
+                                    <th class="px-5 text-center">Paid_Value</th>
+                                    <th class="text-center">Vehicle_ID</th>
+                                    <th class="text-center">Hotel_ID</th>
+                                    <th class="text-center">Guide_ID</th>
+                                    <th class="text-center">Customer_ID</th>
+                                </tr>
+                            </thead>
+                            <tbody id="package-data">
+                                <tr>
+
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script src="js/guide.js"></script>
+    <script src="js/hotel.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/vehicle.js"></script>
+    <script src="js/package.js"></script>
+
+</body>
+
+</html>

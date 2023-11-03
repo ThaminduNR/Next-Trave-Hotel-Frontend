@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="m-0 logo-next"><i class="fa-solid fa-earth-americas mx-3"></i>NEXT travel.</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="" class="nav-item nav-link">About</a>
+                    <a href="" class="nav-item nav-link">Services</a>
+                    <a href="" class="nav-item nav-link">Packages</a>
+                    <a href="" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="register.html" class="btn btn-primary rounded-pill py-2 px-4 register-btn">Register</a>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header-login ">
+            <div class="container py-5 d-flex justify-content-center mt-3">
+                <div class="login-form container">
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="mt-4 login-text">Login</h1>
+                    </div>
+                    <form class="container p-5">
+                        <div class="mb-3  wow fadeInUp" data-wow-delay="0.1s"">
+                            <label for=" username" class="form-label">Username</label>
+                            <input type="text" class="form-control mb-3 p-3 bg-transparent" id="username">
+                            <div class="mb-3  wow fadeInUp" data-wow-delay="0.1s"">
+                            <label for=" pws" class="form-label">Password</label>
+                                <input type="password" class="form-control p-3 bg-transparent" id="pws">
+                            </div>
+                            <div class="mb-3 form-check  wow fadeInUp" data-wow-delay="0.1s"">
+                            <input type=" checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Show Password</label>
+                            </div>
+                            <button type="button" id="login-btn"
+                                class="btn btn-primary py-2 col-12 mt-3 login-btn  wow fadeInUp"
+                                data-wow-delay="0.1s">Login</button>
+                            <label class=" form-check-label mt-3">New User? <span><a href="register.html">Create
+                                        Account</a></span></label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+
+
+
+    <!-- Footer Start -->
+    <footer class="mainfooter" role="contentinfo">
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+    
+                        <div class="footer-pad">
+                            <h4>Company</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#"></a></li>
+                                <li><a href="#">Payment Center</a></li>
+                                <li><a href="#">Contact Directory</a></li>
+                                <li><a href="#">Forms</a></li>
+                                <li><a href="#">News and Updates</a></li>
+                                <li><a href="#">FAQs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+    
+                        <div class="footer-pad">
+                            <h4>Explore</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Write a review</a></li>
+                                <li><a href="#">Add a Place</a></li>
+                                <li><a href="#">Join</a></li>
+                                <li><a href="#">Travelers' Choice</a></li>
+                                <li><a href="#">GreenLeaders</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+    
+                        <div class="footer-pad">
+                            <h4>Contact us</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#">038-15 16 256</a></li>
+                                <li><a href="#">204 Galle Rd, Kalutara 12000</a></li>
+                                <li><a href="#">nexttravel@email.com</a></li>
+                                <li><a href="#">Case Studies</a></li>
+                                <li>
+                                    <a href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Follow Us</h4>
+                        <ul class="social-network social-circle">
+                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa-brands fa-whatsapp"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 copy">
+                        <p class="text-center">&copy; Copyright 2023 - NEXT Travel (Pvt) LTD. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
